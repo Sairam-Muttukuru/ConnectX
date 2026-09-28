@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-handwriting: 'Caveat', cursive, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #06080F;
+    color: #F1F5F9;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Buttery Smooth Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080B14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4f46e5, #7c3aed, #a855f7);
+    border-radius: 9999px;
+    border: 2px solid #080B14;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6366f1, #9333ea, #c084fc);
+  }
+}
+
+/* Hide scrollbar utility for Chrome, Safari, Firefox, Edge, Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox, Chrome 121+, Safari 18+ */
+}
+
+/* White Theme / Light Mode: Turn all text into crisp, high-contrast black */
+.light-theme {
+  color: #000000 !important;
+}
+
+.light-theme h1,
+.light-theme h2,
+.light-theme h3,
+.light-theme h4,
+.light-theme h5,
+.light-theme h6 {
+  color: #000000 !important;
+}
+
+.light-theme .text-slate-400,
+.light-theme .text-slate-500,
+.light-theme .text-slate-600,
+.light-theme .text-slate-700,
+.light-theme .text-slate-800,
+.light-theme .text-slate-900,
+.light-theme .text-gray-400,
+.light-theme .text-gray-500,
+.light-theme .text-gray-600,
+.light-theme .text-muted-foreground {
+  color: #000000 !important;
+}
+
+.light-theme input,
+.light-theme textarea {
+  color: #000000 !important;
+}
+
+.light-theme input::placeholder,
+.light-theme textarea::placeholder {
+  color: #475569 !important;
+}
+
+/* Dark Theme: Turn all text into bright, clean white */
+.dark-theme {
+  color: #ffffff !important;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6,
+.dark-theme p,
+.dark-theme a {
+  color: #ffffff !important;
+}
+
+.dark-theme .text-slate-300,
+.dark-theme .text-slate-400,
+.dark-theme .text-slate-500,
+.dark-theme .text-gray-300,
+.dark-theme .text-gray-400,
+.dark-theme .text-gray-500 {
+  color: #ffffff !important;
+}
+
+.dark-theme span:not([class*="bg-"]):not([class*="text-rose"]):not([class*="text-emerald"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-pink"]):not([class*="text-amber"]):not([class*="text-yellow"]):not([class*="badge"]) {
+  color: #ffffff;
+}
+
+.dark-theme svg:not([class*="text-rose"]):not([class*="text-emerald"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-pink"]):not([class*="text-amber"]):not([class*="text-yellow"]):not([class*="fill-amber"]):not([class*="text-red"]) {
+  color: #ffffff;
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(14, 18, 29, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(14, 18, 29, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.2);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Neon Glows & Gradients */
+.glow-primary {
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.45);
+}
+
+.glow-blue {
+  box-shadow: 0 0 35px rgba(59, 130, 246, 0.35);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+/* Floating Animations */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes phone-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-slow {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.animate-float-phone {
+  animation: phone-float 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}

@@ -1,0 +1,70 @@
+package com.connectx.auth.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
+public class ResetPasswordRequest {
+
+    private String email;
+
+    @NotBlank(message = "Reset OTP or token is required")
+    private String token;
+
+    @NotBlank(message = "New password is required")
+    @Size(min = 8, max = 100, message = "Password must be at least 8 characters")
+    @Pattern(
+        regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$",
+        message = "Password must contain at least one uppercase letter, one lowercase letter, and one number"
+    )
+    private String newPassword;
+
+    @NotBlank(message = "Password confirmation is required")
+    private String confirmPassword;
+
+    public ResetPasswordRequest() {
+    }
+
+    public ResetPasswordRequest(String email, String token, String newPassword, String confirmPassword) {
+        this.email = email;
+        this.token = token;
+        this.newPassword = newPassword;
+        this.confirmPassword = confirmPassword;
+    }
+
+    public ResetPasswordRequest(String token, String newPassword, String confirmPassword) {
+        this(null, token, newPassword, confirmPassword);
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify your ConnectX Account</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 24px 10px;
+      background-color: #F1F5F9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      max-width: 580px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      border-radius: 28px;
+      padding: 36px 38px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid #E2E8F0;
+    }
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+    .header-links {
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      text-align: right;
+      letter-spacing: 0.2px;
+    }
+    .hero-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .hero-text-col {
+      width: 56%;
+      vertical-align: middle;
+      padding-right: 14px;
+    }
+    .hero-img-col {
+      width: 44%;
+      vertical-align: middle;
+      text-align: right;
+    }
+    .badge-verify {
+      font-size: 11px;
+      font-weight: 800;
+      color: #4F46E5;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.2;
+      margin: 0 0 14px 0;
+      letter-spacing: -0.5px;
+    }
+    .hero-greeting {
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      margin: 0 0 6px 0;
+    }
+    .hero-desc {
+      font-size: 13px;
+      color: #64748B;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .otp-card {
+      background: #EEF2FF;
+      border: 1px solid #E0E7FF;
+      border-radius: 20px;
+      padding: 24px 16px;
+      text-align: center;
+      margin: 22px 0 18px 0;
+    }
+    .otp-card-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #4F46E5;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .otp-digit {
+      display: inline-block;
+      width: 46px;
+      height: 58px;
+      line-height: 58px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid #DDE5F8;
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.08);
+      font-size: 32px;
+      font-weight: 800;
+      color: #0F172A;
+      text-align: center;
+      margin: 0 3px;
+    }
+    .otp-expiry {
+      font-size: 12px;
+      color: #64748B;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .otp-expiry strong {
+      color: #4F46E5;
+    }
+    .safety-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+    .safety-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .safety-icon-cell {
+      width: 42px;
+      vertical-align: middle;
+    }
+    .safety-text-cell {
+      vertical-align: middle;
+      padding-left: 12px;
+    }
+    .safety-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F172A;
+      margin: 0 0 3px 0;
+    }
+    .safety-desc {
+      font-size: 11px;
+      color: #64748B;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .verify-btn-wrap {
+      text-align: center;
+      margin: 18px 0 20px 0;
+    }
+    .btn-verify {
+      display: inline-block;
+      padding: 11px 26px;
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      color: #FFFFFF !important;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+    }
+    .community-section {
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid #F1F5F9;
+      margin-top: 18px;
+    }
+    .community-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+      margin: 0 0 2px 0;
+    }
+    .community-sub {
+      font-size: 12px;
+      color: #64748B;
+      margin: 0 0 12px 0;
+    }
+    .footer-table {
+      width: 100%;
+      border-collapse: collapse;
+      padding-top: 14px;
+      border-top: 1px solid #F1F5F9;
+    }
+    .footer-left {
+      width: 45%;
+      vertical-align: middle;
+    }
+    .footer-right {
+      width: 55%;
+      vertical-align: middle;
+      text-align: right;
+    }
+    .footer-links {
+      font-size: 10px;
+      color: #64748B;
+      margin-bottom: 4px;
+    }
+    .footer-links a {
+      color: #64748B;
+      text-decoration: none;
+      margin: 0 3px;
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: #94A3B8;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Top Header Bar with Real Logo Image -->
+    <table class="header-table" role="presentation">
+      <tr>
+        <td style="vertical-align: middle;">
+          <img src="https://files.catbox.moe/pmml9g.png" alt="ConnectX - People Closer, Always" width="135" style="display: block; border: 0; outline: none;" />
+        </td>
+        <td class="header-links" style="vertical-align: middle;">
+          Chat &nbsp;&bull;&nbsp; Call &nbsp;&bull;&nbsp; Share &nbsp;&bull;&nbsp; Belong
+        </td>
+      </tr>
+    </table>
+
+    <!-- Hero Section with Vector Illustration Image -->
+    <table class="hero-table" role="presentation">
+      <tr>
+        <td class="hero-text-col">
+          <div class="badge-verify">Verify Your Email</div>
+          <h1 class="hero-title">One step closer to real connections</h1>
+          <p class="hero-greeting">Hi {{displayName}}! &#x1F44B;</p>
+          <p class="hero-desc">
+            Thanks for joining ConnectX. Use the verification code below to complete your email verification and start your journey with us.
+          </p>
+        </td>
+        <td class="hero-img-col">
+          <!-- Real Illustration Image hosted on CDN that Gmail renders natively -->
+          <img src="https://files.catbox.moe/n2cqkc.png" alt="ConnectX Verification" width="220" style="display: block; width: 100%; max-width: 220px; height: auto; border: 0;" />
+        </td>
+      </tr>
+    </table>
+
+    <!-- 6-Digit OTP Box -->
+    <div class="otp-card">
+      <div class="otp-card-title">Your Verification Code</div>
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td><div class="otp-digit">{{otp_0}}</div></td>
+          <td><div class="otp-digit">{{otp_1}}</div></td>
+          <td><div class="otp-digit">{{otp_2}}</div></td>
+          <td><div class="otp-digit">{{otp_3}}</div></td>
+          <td><div class="otp-digit">{{otp_4}}</div></td>
+          <td><div class="otp-digit">{{otp_5}}</div></td>
+        </tr>
+      </table>
+      <div class="otp-expiry">
+        &#x23F1;&nbsp; This code expires in <strong>5 minutes</strong>.
+      </div>
+    </div>
+
+    <!-- Security Safety Card with Shield Image -->
+    <div class="safety-card">
+      <table class="safety-table" role="presentation">
+        <tr>
+          <td class="safety-icon-cell">
+            <img src="https://files.catbox.moe/lszsq2.png" alt="Security" width="34" height="36" style="display: block; border: 0;" />
+          </td>
+          <td class="safety-text-cell">
+            <div class="safety-title">Keep your account safe</div>
+            <div class="safety-desc">
+              Never share this verification code with anyone. ConnectX will never ask for your OTP by phone, email, or chat.
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Instant One-Click Link -->
+    <div class="verify-btn-wrap">
+      <a href="{{verificationLink}}" class="btn-verify" target="_blank">
+        Verify Email Instantly &rarr;
+      </a>
+    </div>
+
+    <!-- Community & Social Section with Real Individual Clickable Icons -->
+    <div class="community-section">
+      <div class="community-title">We're excited to have you on board!</div>
+      <div class="community-sub">Let's build a more connected world together.</div>
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto 20px auto;">
+        <tr>
+          <td style="padding: 0 7px;">
+            <a href="https://twitter.com" target="_blank" style="text-decoration: none; display: inline-block;">
+              <img src="https://files.catbox.moe/8voyuh.png" alt="Twitter / X" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
+            </a>
+          </td>
+          <td style="padding: 0 7px;">
+            <a href="https://instagram.com" target="_blank" style="text-decoration: none; display: inline-block;">
+              <img src="https://files.catbox.moe/xj0r2y.png" alt="Instagram" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
+            </a>
+          </td>
+          <td style="padding: 0 7px;">
+            <a href="https://linkedin.com" target="_blank" style="text-decoration: none; display: inline-block;">
+              <img src="https://files.catbox.moe/nv98el.png" alt="LinkedIn" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
+            </a>
+          </td>
+          <td style="padding: 0 7px;">
+            <a href="https://youtube.com" target="_blank" style="text-decoration: none; display: inline-block;">
+              <img src="https://files.catbox.moe/br86t0.png" alt="YouTube" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <table class="footer-table" role="presentation">
+      <tr>
+        <td class="footer-left">
+          <img src="https://files.catbox.moe/pmml9g.png" alt="ConnectX" width="95" style="display: block; border: 0;" />
+        </td>
+        <td class="footer-right">
+          <div class="footer-links">
+            <a href="#">Help Center</a> &bull;
+            <a href="#">Privacy Policy</a> &bull;
+            <a href="#">Terms of Service</a>
+          </div>
+          <div class="footer-copy">&copy; 2025 ConnectX. All rights reserved.</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
