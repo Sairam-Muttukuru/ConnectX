@@ -20,14 +20,17 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
     private final String frontendUrl;
+    private final String emailAssetsUrl;
     private final String fromEmail;
 
     public EmailService(
             JavaMailSender mailSender,
-            @Value("${connectx.frontend-url:http://localhost:5173}") String frontendUrl,
+            @Value("${connectx.frontend-url:http://localhost:5174}") String frontendUrl,
+            @Value("${connectx.email.assets-url:http://localhost:5174/images/email}") String emailAssetsUrl,
             @Value("${spring.mail.username:no-reply@connectx.app}") String fromEmail) {
         this.mailSender = mailSender;
-        this.frontendUrl = frontendUrl;
+        this.frontendUrl = frontendUrl.endsWith("/") ? frontendUrl.substring(0, frontendUrl.length() - 1) : frontendUrl;
+        this.emailAssetsUrl = emailAssetsUrl.endsWith("/") ? emailAssetsUrl.substring(0, emailAssetsUrl.length() - 1) : emailAssetsUrl;
         this.fromEmail = fromEmail;
     }
 
@@ -50,7 +53,8 @@ public class EmailService {
                     .replace("{{otp_3}}", String.valueOf(otpStr.charAt(3)))
                     .replace("{{otp_4}}", String.valueOf(otpStr.charAt(4)))
                     .replace("{{otp_5}}", String.valueOf(otpStr.charAt(5)))
-                    .replace("{{verificationLink}}", verificationLink);
+                    .replace("{{verificationLink}}", verificationLink)
+                    .replace("{{assetsUrl}}", emailAssetsUrl);
 
             sendMimeMessage(toEmail, "Your ConnectX Verification Code: " + rawOtp, htmlContent);
             log.info("[EMAIL NOTIFICATION] Verification email dispatched successfully to {}", toEmail);
@@ -79,7 +83,8 @@ public class EmailService {
                     .replace("{{otp_3}}", String.valueOf(otpStr.charAt(3)))
                     .replace("{{otp_4}}", String.valueOf(otpStr.charAt(4)))
                     .replace("{{otp_5}}", String.valueOf(otpStr.charAt(5)))
-                    .replace("{{resetLink}}", resetLink);
+                    .replace("{{resetLink}}", resetLink)
+                    .replace("{{assetsUrl}}", emailAssetsUrl);
 
             sendMimeMessage(toEmail, "Your ConnectX Password Reset Code: " + otpStr, htmlContent);
             log.info("[EMAIL NOTIFICATION] Password reset email dispatched successfully to {}", toEmail);

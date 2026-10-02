@@ -214,11 +214,20 @@
 </head>
 <body>
   <div class="wrapper">
-    <!-- Top Header Bar with Real Logo Image -->
+    <!-- Top Header Bar with Real Website Logo -->
     <table class="header-table" role="presentation">
       <tr>
         <td style="vertical-align: middle;">
-          <img src="https://files.catbox.moe/pmml9g.png" alt="ConnectX - People Closer, Always" width="135" style="display: block; border: 0; outline: none;" />
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="vertical-align: middle; padding-right: 10px;">
+                <img src="{{assetsUrl}}/connectx_logo.png" alt="ConnectX" width="38" height="38" style="display: block; border-radius: 10px; width: 38px; height: 38px; border: 0; outline: none;" />
+              </td>
+              <td style="vertical-align: middle; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 800; color: #0F172A; letter-spacing: -0.5px; line-height: 1;">
+                Connect<span style="color: #7C3AED;">X</span>
+              </td>
+            </tr>
+          </table>
         </td>
         <td class="header-links" style="vertical-align: middle;">
           Chat &nbsp;&bull;&nbsp; Call &nbsp;&bull;&nbsp; Share &nbsp;&bull;&nbsp; Belong
@@ -238,8 +247,8 @@
           </p>
         </td>
         <td class="hero-img-col">
-          <!-- Real Illustration Image hosted on CDN that Gmail renders natively -->
-          <img src="https://files.catbox.moe/n2cqkc.png" alt="ConnectX Verification" width="220" style="display: block; width: 100%; max-width: 220px; height: auto; border: 0;" />
+          <!-- Illustration Image hosted in frontend public assets -->
+          <img src="{{assetsUrl}}/verification-hero.png" alt="ConnectX Verification" width="220" style="display: block; width: 100%; max-width: 220px; height: auto; border: 0;" />
         </td>
       </tr>
     </table>
@@ -267,7 +276,7 @@
       <table class="safety-table" role="presentation">
         <tr>
           <td class="safety-icon-cell">
-            <img src="https://files.catbox.moe/lszsq2.png" alt="Security" width="34" height="36" style="display: block; border: 0;" />
+            <img src="{{assetsUrl}}/shield.png" alt="Security" width="34" height="36" style="display: block; border: 0;" />
           </td>
           <td class="safety-text-cell">
             <div class="safety-title">Keep your account safe</div>
@@ -294,22 +303,22 @@
         <tr>
           <td style="padding: 0 7px;">
             <a href="https://twitter.com" target="_blank" style="text-decoration: none; display: inline-block;">
-              <img src="https://files.catbox.moe/8voyuh.png" alt="Twitter / X" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
+              <img src="{{assetsUrl}}/twitter.png" alt="Twitter / X" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
             </a>
           </td>
           <td style="padding: 0 7px;">
             <a href="https://instagram.com" target="_blank" style="text-decoration: none; display: inline-block;">
-              <img src="https://files.catbox.moe/xj0r2y.png" alt="Instagram" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
+              <img src="{{assetsUrl}}/instagram.png" alt="Instagram" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
             </a>
           </td>
           <td style="padding: 0 7px;">
             <a href="https://linkedin.com" target="_blank" style="text-decoration: none; display: inline-block;">
-              <img src="https://files.catbox.moe/nv98el.png" alt="LinkedIn" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
+              <img src="{{assetsUrl}}/linkedin.png" alt="LinkedIn" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
             </a>
           </td>
           <td style="padding: 0 7px;">
             <a href="https://youtube.com" target="_blank" style="text-decoration: none; display: inline-block;">
-              <img src="https://files.catbox.moe/br86t0.png" alt="YouTube" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
+              <img src="{{assetsUrl}}/youtube.png" alt="YouTube" width="36" height="36" style="display: block; width: 36px; height: 36px; border: 0; outline: none;" />
             </a>
           </td>
         </tr>
@@ -320,7 +329,16 @@
     <table class="footer-table" role="presentation">
       <tr>
         <td class="footer-left">
-          <img src="https://files.catbox.moe/pmml9g.png" alt="ConnectX" width="95" style="display: block; border: 0;" />
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="vertical-align: middle; padding-right: 8px;">
+                <img src="{{assetsUrl}}/connectx_logo.png" alt="ConnectX Logo" width="24" height="24" style="display: block; border-radius: 6px; width: 24px; height: 24px; border: 0;" />
+              </td>
+              <td style="vertical-align: middle; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 15px; font-weight: 800; color: #334155; letter-spacing: -0.4px;">
+                Connect<span style="color: #7C3AED;">X</span>
+              </td>
+            </tr>
+          </table>
         </td>
         <td class="footer-right">
           <div class="footer-links">

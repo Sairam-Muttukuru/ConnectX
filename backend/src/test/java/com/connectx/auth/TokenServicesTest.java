@@ -95,7 +95,7 @@ class TokenServicesTest {
         String tokenHash = TokenHashUtils.hashToken(otp);
         EmailVerificationToken token = new EmailVerificationToken(userId, tokenHash, Instant.now().plus(1, ChronoUnit.HOURS));
 
-        when(userRepository.findByEmail("sai@gmail.com")).thenReturn(Optional.of(testUser));
+        when(userRepository.findByIdentifier("sai@gmail.com")).thenReturn(Optional.of(testUser));
         when(emailTokenRepo.findFirstByUserIdAndUsedFalseOrderByCreatedAtDesc(userId)).thenReturn(Optional.of(token));
         when(userRepository.findById(userId)).thenReturn(Optional.of(testUser));
 

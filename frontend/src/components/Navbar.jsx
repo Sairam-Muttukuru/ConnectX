@@ -62,13 +62,13 @@ export default function Navbar({ onOpenVideo, onNavigate, isDark, toggleTheme })
             <img
               src="/images/connectx_logo.png"
               alt="ConnectX Logo"
-              className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(168,85,247,0.55)]"
+              className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(168,85,247,0.65)]"
             />
           </div>
-          <span className={`text-2xl font-extrabold tracking-tight flex items-center ${
+          <span className={`text-2xl font-bold tracking-tight ${
             isDark ? 'text-white' : 'text-slate-900'
           }`}>
-            Connect<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">X</span>
+            ConnectX
           </span>
         </a>
 
