@@ -59,12 +59,16 @@ export default function CityscapeCTA({ onOpenVideo, onNavigate, isDark }) {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <button
-                  onClick={onOpenVideo}
+                <a
+                  href="#features"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#features')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-black/40 hover:bg-black/60 text-white font-semibold text-base border border-white/20 backdrop-blur-xl hover:border-white/40 transition-all duration-300 cursor-pointer"
                 >
-                  <span>Learn More</span>
-                </button>
+                  <span>Explore Features</span>
+                </a>
               </div>
             </div>
 

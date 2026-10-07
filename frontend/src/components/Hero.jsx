@@ -22,7 +22,9 @@ import {
   Settings,
   Star,
   RefreshCw,
-  ChevronLeft
+  ChevronLeft,
+  Sparkles,
+  Check
 } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
@@ -128,7 +130,7 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
 
             {/* CTA Buttons */}
             <ScrollReveal direction="up" delay={0.4} duration={0.9}>
-              <div className="flex flex-wrap items-center gap-4 mb-10">
+              <div className="flex flex-wrap items-center gap-4 mb-4">
                 <button
                   onClick={() => onNavigate ? onNavigate('signup') : null}
                   className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#9333EA] text-white font-bold text-base shadow-[0_0_35px_rgba(99,102,241,0.6)] hover:shadow-[0_0_45px_rgba(147,51,234,0.85)] hover:scale-[1.02] active:scale-98 transition-all duration-300 cursor-pointer"
@@ -137,19 +139,37 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <button
-                  onClick={onOpenVideo}
-                  className={`inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-base backdrop-blur-md transition-all duration-300 group cursor-pointer shadow-sm ${
+                <a
+                  href="#features"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#features')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className={`inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold text-base backdrop-blur-md transition-all duration-300 group cursor-pointer shadow-sm ${
                     isDark
-                      ? 'bg-[#131624] hover:bg-[#1A1F33] text-white border border-white/15'
+                      ? 'bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-purple-500/40'
                       : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300'
                   }`}
                 >
-                  <div className="w-7 h-7 rounded-full bg-[#6B21A8] flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-3.5 h-3.5 text-white fill-current ml-0.5" />
-                  </div>
-                  <span>Watch Video</span>
-                </button>
+                  <Sparkles className="w-4 h-4 text-purple-400 group-hover:rotate-12 transition-transform" />
+                  <span>Explore Features</span>
+                </a>
+              </div>
+
+              {/* High-Trust Value Badges */}
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-[13px] font-medium mb-10 text-slate-400">
+                <span className="flex items-center gap-1.5">
+                  <Check className="w-4 h-4 text-emerald-400 stroke-[2.5]" />
+                  <span className={isDark ? 'text-slate-300' : 'text-slate-600'}>No phone number required</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Check className="w-4 h-4 text-emerald-400 stroke-[2.5]" />
+                  <span className={isDark ? 'text-slate-300' : 'text-slate-600'}>100% Free forever</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Check className="w-4 h-4 text-emerald-400 stroke-[2.5]" />
+                  <span className={isDark ? 'text-slate-300' : 'text-slate-600'}>End-to-end privacy</span>
+                </span>
               </div>
             </ScrollReveal>
 

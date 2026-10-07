@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
-export default function TalkFaceToFace({ onOpenVideo, isDark }) {
+export default function TalkFaceToFace({ onOpenVideo, onNavigate, isDark }) {
   const [isMuted, setIsMuted] = useState(false);
   const [isVideoOff, setIsVideoOff] = useState(false);
 
@@ -81,14 +81,14 @@ export default function TalkFaceToFace({ onOpenVideo, isDark }) {
             <ScrollReveal direction="up" delay={0.5} duration={0.9}>
               <div>
                 <button
-                  onClick={onOpenVideo}
+                  onClick={() => onNavigate ? onNavigate('signup') : null}
                   className={`group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-base border transition-all duration-300 cursor-pointer ${
                     isDark
                       ? 'bg-[#0f1322] hover:bg-[#161c33] text-white border-white/15 hover:border-purple-500/40 shadow-lg'
                       : 'bg-slate-900 hover:bg-slate-800 text-white border-slate-900 shadow-md'
                   }`}
                 >
-                  <span>Explore Calling</span>
+                  <span>Start Talking Free</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>

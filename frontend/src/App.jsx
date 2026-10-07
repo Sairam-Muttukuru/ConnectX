@@ -76,6 +76,7 @@ export default function App() {
         {/* 5. Section 4: "Talk face to face." */}
         <TalkFaceToFace
           onOpenVideo={() => setIsVideoModalOpen(true)}
+          onNavigate={navigateTo}
           isDark={isDark}
         />
 
