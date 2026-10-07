@@ -47,7 +47,7 @@ export default function Navbar({ onOpenVideo, onNavigate, isDark, toggleTheme })
           : 'bg-transparent py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
         
         {/* Brand Logo */}
         <a
@@ -65,7 +65,7 @@ export default function Navbar({ onOpenVideo, onNavigate, isDark, toggleTheme })
               className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(168,85,247,0.65)]"
             />
           </div>
-          <span className={`text-2xl font-bold tracking-tight ${
+          <span className={`text-2xl sm:text-[26px] font-black tracking-tight ${
             isDark ? 'text-white' : 'text-slate-900'
           }`}>
             ConnectX
@@ -73,7 +73,7 @@ export default function Navbar({ onOpenVideo, onNavigate, isDark, toggleTheme })
         </a>
 
         {/* Center Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1.5">
           {navLinks.map((item) => {
             const isActive = activeTab === item.label;
             return (
@@ -84,13 +84,13 @@ export default function Navbar({ onOpenVideo, onNavigate, isDark, toggleTheme })
                   e.preventDefault();
                   handleNavClick(item.label, item.href);
                 }}
-                className={`px-4 py-1.5 text-sm font-medium transition-colors ${
+                className={`px-4 py-2 text-[15px] font-medium transition-colors ${
                   isActive
                     ? isDark
-                      ? 'text-white font-semibold'
-                      : 'text-purple-700 font-semibold'
+                      ? 'text-white font-bold'
+                      : 'text-purple-700 font-bold'
                     : isDark
-                      ? 'text-slate-300 hover:text-white'
+                      ? 'text-slate-200 hover:text-white'
                       : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -101,7 +101,7 @@ export default function Navbar({ onOpenVideo, onNavigate, isDark, toggleTheme })
         </nav>
 
         {/* Right CTA Actions & Working Theme Toggle */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3.5">
           {/* Dark / White Theme Toggle Button */}
           <button
             onClick={toggleTheme}
@@ -123,9 +123,9 @@ export default function Navbar({ onOpenVideo, onNavigate, isDark, toggleTheme })
           {/* Log In Button */}
           <button
             onClick={() => onNavigate ? onNavigate('login') : onOpenVideo()}
-            className={`px-4 py-2 text-sm font-medium rounded-full border transition-all cursor-pointer ${
+            className={`px-5 py-2.5 text-sm sm:text-[15px] font-semibold rounded-full border transition-all cursor-pointer ${
               isDark
-                ? 'text-slate-200 hover:text-white border-white/15 hover:border-white/30 hover:bg-white/5'
+                ? 'text-slate-100 hover:text-white border-white/20 hover:border-white/40 hover:bg-white/10'
                 : 'text-slate-700 hover:text-slate-900 border-slate-200 hover:border-slate-300 hover:bg-slate-100'
             }`}
           >
@@ -135,7 +135,7 @@ export default function Navbar({ onOpenVideo, onNavigate, isDark, toggleTheme })
           {/* Sign Up Button */}
           <button
             onClick={() => onNavigate ? onNavigate('signup') : null}
-            className="group relative inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:shadow-[0_0_25px_rgba(124,58,237,0.7)] transition-all duration-300 active:scale-95 cursor-pointer"
+            className="group relative inline-flex items-center gap-2 px-6 py-2.5 text-sm sm:text-[15px] font-bold text-white rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:shadow-[0_0_25px_rgba(124,58,237,0.7)] transition-all duration-300 active:scale-95 cursor-pointer"
           >
             <span>Sign Up</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

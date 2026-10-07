@@ -56,12 +56,12 @@ const features = [
 
 export default function QuickFeatures({ isDark }) {
   return (
-    <section id="features" className={`py-12 sm:py-16 relative transition-colors duration-300 ${
+    <section id="features" className={`py-14 sm:py-20 relative transition-colors duration-300 ${
       isDark ? 'bg-transparent' : 'bg-slate-50/50'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -73,7 +73,7 @@ export default function QuickFeatures({ isDark }) {
                 className="h-full"
               >
                 <div
-                  className={`group relative h-full flex flex-col items-center text-center p-4 sm:p-5 rounded-2xl border backdrop-blur-xl transition-all duration-400 hover:-translate-y-1.5 cursor-pointer ${
+                  className={`group relative h-full flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl border backdrop-blur-xl transition-all duration-400 hover:-translate-y-1.5 cursor-pointer ${
                     isDark
                       ? 'bg-[#090c17]/85 border-white/10 hover:border-purple-500/40 hover:shadow-[0_15px_35px_rgba(0,0,0,0.6)]'
                       : 'bg-white border-slate-200 hover:border-purple-300 hover:shadow-lg'
@@ -85,20 +85,20 @@ export default function QuickFeatures({ isDark }) {
                   />
 
                   {/* Icon with glowing container */}
-                  <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-3.5 group-hover:scale-110 transition-transform duration-300 ${item.iconBg}`}>
-                    <Icon className="w-5 h-5 fill-current/10" />
+                  <div className={`w-13 h-13 sm:w-14 sm:h-14 rounded-2xl border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 ${item.iconBg}`}>
+                    <Icon className="w-6 h-6 fill-current/10" />
                   </div>
 
                   {/* Title */}
-                  <h3 className={`text-xs sm:text-sm font-bold mb-1.5 leading-snug transition-colors ${
+                  <h3 className={`text-sm sm:text-base lg:text-[17px] font-bold mb-2 leading-snug transition-colors ${
                     isDark ? 'text-white group-hover:text-purple-200' : 'text-slate-900 group-hover:text-purple-700'
                   }`}>
                     {item.title}
                   </h3>
 
                   {/* Subtitle */}
-                  <p className={`text-[11px] sm:text-xs leading-relaxed ${
-                    isDark ? 'text-slate-400' : 'text-slate-500'
+                  <p className={`text-xs sm:text-[13px] leading-relaxed font-normal ${
+                    isDark ? 'text-slate-300' : 'text-slate-600'
                   }`}>
                     {item.subtitle}
                   </p>

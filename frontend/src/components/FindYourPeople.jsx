@@ -17,13 +17,13 @@ export default function FindYourPeople({ onNavigate, isDark }) {
       {/* Background ambient glow */}
       <div className="absolute top-1/2 -left-32 w-[500px] h-[500px] bg-indigo-600/10 blur-[150px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
           {/* Left Column: Overlapping Community Cards Collage */}
           <div className="lg:col-span-6 relative">
             <ScrollReveal direction="zoom" delay={0.2} duration={1.0}>
-              <div className="relative mx-auto max-w-[500px] pb-10">
+              <div className="relative mx-auto max-w-[560px] pb-10">
                 
                 {/* 1. Main Background Hiking Community Card */}
                 <div className="rounded-[24px] overflow-hidden border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.8)] aspect-[16/10] relative group">
@@ -107,14 +107,14 @@ export default function FindYourPeople({ onNavigate, isDark }) {
           <div className="lg:col-span-6 text-left relative z-10">
             {/* Eyebrow */}
             <ScrollReveal direction="down" delay={0.1} duration={0.8}>
-              <div className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-purple-400/90 mb-4">
+              <div className="text-xs sm:text-sm font-extrabold tracking-[0.25em] uppercase text-[#D946EF] mb-4">
                 COMMUNITIES THAT MATTER
               </div>
             </ScrollReveal>
 
             {/* Headline */}
             <ScrollReveal direction="up" delay={0.2} duration={0.9}>
-              <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] mb-5 ${
+              <h2 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] font-black tracking-tight leading-[1.12] mb-6 ${
                 isDark ? 'text-white' : 'text-slate-900'
               }`}>
                 Find your people.
@@ -123,8 +123,8 @@ export default function FindYourPeople({ onNavigate, isDark }) {
 
             {/* Description */}
             <ScrollReveal direction="up" delay={0.3} duration={0.9}>
-              <p className={`text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-normal ${
-                isDark ? 'text-slate-300' : 'text-slate-600'
+              <p className={`text-base sm:text-lg lg:text-xl leading-relaxed mb-9 max-w-xl font-normal ${
+                isDark ? 'text-slate-200' : 'text-slate-600'
               }`}>
                 Join groups, make friends, and be part of communities that share your interests.
               </p>
@@ -132,13 +132,13 @@ export default function FindYourPeople({ onNavigate, isDark }) {
 
             {/* 4 Checklist Perks */}
             <ScrollReveal direction="up" delay={0.4} duration={0.9}>
-              <div className="space-y-3.5 mb-8">
+              <div className="space-y-4 mb-9">
                 {perks.map((perk, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(168,85,247,0.4)]">
-                      <Check className="w-3 h-3 text-white stroke-[3]" />
+                  <div key={index} className="flex items-center gap-3.5">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(168,85,247,0.4)]">
+                      <Check className="w-3.5 h-3.5 text-white stroke-[3]" />
                     </div>
-                    <span className={`text-xs sm:text-sm font-medium ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
+                    <span className={`text-sm sm:text-base lg:text-[17px] font-semibold ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
                       {perk}
                     </span>
                   </div>
@@ -151,9 +151,9 @@ export default function FindYourPeople({ onNavigate, isDark }) {
               <div className="flex flex-wrap items-center justify-between gap-6">
                 <button
                   onClick={() => onNavigate ? onNavigate('signup') : null}
-                  className={`group inline-flex items-center gap-2.5 px-7 py-3 rounded-full font-semibold text-sm border transition-all duration-300 cursor-pointer ${
+                  className={`group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-base border transition-all duration-300 cursor-pointer ${
                     isDark
-                      ? 'bg-[#0f1322] hover:bg-[#161c33] text-white border-white/15 hover:border-purple-500/40'
+                      ? 'bg-[#0f1322] hover:bg-[#161c33] text-white border-white/15 hover:border-purple-500/40 shadow-lg'
                       : 'bg-slate-900 hover:bg-slate-800 text-white border-slate-900 shadow-md'
                   }`}
                 >
@@ -162,7 +162,7 @@ export default function FindYourPeople({ onNavigate, isDark }) {
                 </button>
 
                 {/* Handwritten Doodle */}
-                <div className="font-handwriting text-2xl text-purple-300 -rotate-2 select-none flex items-center gap-1.5 text-right">
+                <div className="font-handwriting text-2xl sm:text-3xl text-purple-300 -rotate-2 select-none flex items-center gap-1.5 text-right">
                   <span className="leading-tight">Same Interests<br />New Friends<br />Bigger Stories</span>
                   <span className="text-pink-400 text-3xl">♡</span>
                 </div>

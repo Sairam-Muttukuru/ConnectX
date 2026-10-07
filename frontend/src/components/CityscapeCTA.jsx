@@ -12,7 +12,7 @@ export default function CityscapeCTA({ onOpenVideo, onNavigate, isDark }) {
 
   return (
     <section id="signup" className="py-14 sm:py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         <ScrollReveal direction="up" delay={0.2} duration={1.0}>
           <div className="relative rounded-[32px] overflow-hidden border border-white/15 shadow-[0_30px_80px_rgba(0,0,0,0.9),0_0_50px_rgba(139,92,246,0.25)] min-h-[460px] flex flex-col justify-between p-8 sm:p-12 lg:p-14">
             
@@ -36,16 +36,16 @@ export default function CityscapeCTA({ onOpenVideo, onNavigate, isDark }) {
             </div>
 
             {/* Center Content Area */}
-            <div className="relative z-10 max-w-2xl text-left space-y-5 my-auto">
-              <div className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-purple-400/90">
+            <div className="relative z-10 max-w-2xl text-left space-y-6 my-auto">
+              <div className="text-xs sm:text-sm font-extrabold tracking-[0.25em] uppercase text-[#D946EF]">
                 A BRIGHTER, MORE CONNECTED TOMORROW
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-tight">
                 Be Part of Something Real.
               </h2>
 
-              <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+              <p className="text-slate-200 text-base sm:text-lg lg:text-xl leading-relaxed font-normal">
                 Join ConnectX today and experience a safer, smarter, and more meaningful way to connect with people around the world.
               </p>
 
@@ -53,15 +53,15 @@ export default function CityscapeCTA({ onOpenVideo, onNavigate, isDark }) {
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
                   onClick={() => onNavigate ? onNavigate('signup') : null}
-                  className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-semibold text-sm shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:shadow-[0_0_40px_rgba(124,58,237,0.8)] hover:scale-[1.02] active:scale-98 transition-all duration-300 cursor-pointer"
+                  className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-base shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:shadow-[0_0_40px_rgba(124,58,237,0.8)] hover:scale-[1.02] active:scale-98 transition-all duration-300 cursor-pointer"
                 >
                   <span>Create Your Account</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <button
                   onClick={onOpenVideo}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-black/40 hover:bg-black/60 text-white font-semibold text-sm border border-white/20 backdrop-blur-xl hover:border-white/40 transition-all duration-300 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-black/40 hover:bg-black/60 text-white font-semibold text-base border border-white/20 backdrop-blur-xl hover:border-white/40 transition-all duration-300 cursor-pointer"
                 >
                   <span>Learn More</span>
                 </button>
@@ -75,9 +75,9 @@ export default function CityscapeCTA({ onOpenVideo, onNavigate, isDark }) {
                 return (
                   <div
                     key={idx}
-                    className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a0d1a]/80 border border-white/10 backdrop-blur-md text-xs font-medium text-slate-300"
+                    className="flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-[#0a0d1a]/85 border border-white/15 backdrop-blur-md text-xs sm:text-sm font-semibold text-slate-200 shadow-sm"
                   >
-                    <Icon className="w-3.5 h-3.5 text-purple-400" />
+                    <Icon className="w-4 h-4 text-purple-400" />
                     <span>{badge.text}</span>
                   </div>
                 );

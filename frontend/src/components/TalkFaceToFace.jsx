@@ -31,21 +31,21 @@ export default function TalkFaceToFace({ onOpenVideo, isDark }) {
       {/* Ambient background glow */}
       <div className="absolute top-1/2 -right-32 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
           {/* Left Column: Heading, Checklist & CTA */}
-          <div className="lg:col-span-5 text-left relative z-10">
+          <div className="lg:col-span-6 text-left relative z-10">
             {/* Eyebrow */}
             <ScrollReveal direction="down" delay={0.1} duration={0.8}>
-              <div className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-purple-400/90 mb-4">
+              <div className="text-xs sm:text-sm font-extrabold tracking-[0.25em] uppercase text-[#D946EF] mb-4">
                 SEE, HEAR, FEEL CLOSER
               </div>
             </ScrollReveal>
 
             {/* Headline */}
             <ScrollReveal direction="up" delay={0.2} duration={0.9}>
-              <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] mb-5 ${
+              <h2 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] font-black tracking-tight leading-[1.12] mb-6 ${
                 isDark ? 'text-white' : 'text-slate-900'
               }`}>
                 Talk face to face.
@@ -54,8 +54,8 @@ export default function TalkFaceToFace({ onOpenVideo, isDark }) {
 
             {/* Description */}
             <ScrollReveal direction="up" delay={0.3} duration={0.9}>
-              <p className={`text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-normal ${
-                isDark ? 'text-slate-300' : 'text-slate-600'
+              <p className={`text-base sm:text-lg lg:text-xl leading-relaxed mb-9 max-w-xl font-normal ${
+                isDark ? 'text-slate-200' : 'text-slate-600'
               }`}>
                 High-quality audio and video calls that bring you closer, no matter where you are.
               </p>
@@ -63,13 +63,13 @@ export default function TalkFaceToFace({ onOpenVideo, isDark }) {
 
             {/* 4 Checklist Perks */}
             <ScrollReveal direction="up" delay={0.4} duration={0.9}>
-              <div className="space-y-3.5 mb-8">
+              <div className="space-y-4 mb-9">
                 {perks.map((perk, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(168,85,247,0.4)]">
-                      <Check className="w-3 h-3 text-white stroke-[3]" />
+                  <div key={index} className="flex items-center gap-3.5">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(168,85,247,0.4)]">
+                      <Check className="w-3.5 h-3.5 text-white stroke-[3]" />
                     </div>
-                    <span className={`text-xs sm:text-sm font-medium ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
+                    <span className={`text-sm sm:text-base lg:text-[17px] font-semibold ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
                       {perk}
                     </span>
                   </div>
@@ -82,9 +82,9 @@ export default function TalkFaceToFace({ onOpenVideo, isDark }) {
               <div>
                 <button
                   onClick={onOpenVideo}
-                  className={`group inline-flex items-center gap-2.5 px-7 py-3 rounded-full font-semibold text-sm border transition-all duration-300 cursor-pointer ${
+                  className={`group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-base border transition-all duration-300 cursor-pointer ${
                     isDark
-                      ? 'bg-[#0f1322] hover:bg-[#161c33] text-white border-white/15 hover:border-purple-500/40'
+                      ? 'bg-[#0f1322] hover:bg-[#161c33] text-white border-white/15 hover:border-purple-500/40 shadow-lg'
                       : 'bg-slate-900 hover:bg-slate-800 text-white border-slate-900 shadow-md'
                   }`}
                 >
@@ -96,9 +96,9 @@ export default function TalkFaceToFace({ onOpenVideo, isDark }) {
           </div>
 
           {/* Right Column: 16:9 Video Conference Mockup Card */}
-          <div className="lg:col-span-7 relative">
+          <div className="lg:col-span-6 relative">
             <ScrollReveal direction="zoom" delay={0.2} duration={1.0}>
-              <div className="relative mx-auto max-w-[560px]">
+              <div className="relative mx-auto lg:ml-auto max-w-[620px]">
                 
                 {/* Video Call Frame */}
                 <div className="rounded-[28px] overflow-hidden border border-white/20 bg-black shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_40px_rgba(139,92,246,0.2)] aspect-[16/10] relative group">

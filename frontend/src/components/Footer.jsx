@@ -15,9 +15,9 @@ export default function Footer({ isDark }) {
 
   return (
     <footer className={`pt-16 pb-12 border-t transition-colors duration-300 relative z-10 ${
-      isDark ? 'bg-[#05070d] border-white/10 text-slate-400' : 'bg-white border-slate-200 text-slate-600'
+      isDark ? 'bg-[#05070d] border-white/10 text-slate-300' : 'bg-white border-slate-200 text-slate-600'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         
         {/* Main 5-Column Grid */}
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8 pb-12 border-b border-white/5">
@@ -25,7 +25,7 @@ export default function Footer({ isDark }) {
           {/* Column 1: Brand & Socials (4 cols on md) */}
           <div className="col-span-2 md:col-span-4 text-left space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center">
                 <img
                   src="/images/connectx_logo.png"
                   alt="ConnectX Logo"
@@ -33,10 +33,10 @@ export default function Footer({ isDark }) {
                 />
               </div>
               <div>
-                <span className={`text-xl font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                <span className={`text-2xl font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
                   Connect<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">X</span>
                 </span>
-                <p className="text-[11px] text-slate-500 font-medium">People Beyond Limits</p>
+                <p className="text-xs sm:text-sm text-slate-400 font-medium">People Beyond Limits</p>
               </div>
             </div>
 
@@ -120,11 +120,11 @@ export default function Footer({ isDark }) {
           </div>
 
           {/* Column 2: Product */}
-          <div className="text-left space-y-2.5 col-span-1 md:col-span-2">
-            <h5 className={`font-bold text-xs uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>
+          <div className="text-left space-y-3 col-span-1 md:col-span-2">
+            <h5 className={`font-bold text-sm uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>
               Product
             </h5>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-sm sm:text-[15px]">
               <li><a href="#features" className="hover:text-purple-400 transition-colors">Features</a></li>
               <li><a href="#security" className="hover:text-purple-400 transition-colors">Security</a></li>
               <li><a href="#download" className="hover:text-purple-400 transition-colors">Download</a></li>
@@ -133,11 +133,11 @@ export default function Footer({ isDark }) {
           </div>
 
           {/* Column 3: Company */}
-          <div className="text-left space-y-2.5 col-span-1 md:col-span-2">
-            <h5 className={`font-bold text-xs uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>
+          <div className="text-left space-y-3 col-span-1 md:col-span-2">
+            <h5 className={`font-bold text-sm uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>
               Company
             </h5>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-sm sm:text-[15px]">
               <li><a href="#about" className="hover:text-purple-400 transition-colors">About</a></li>
               <li><a href="#blog" className="hover:text-purple-400 transition-colors">Blog</a></li>
               <li><a href="#careers" className="hover:text-purple-400 transition-colors">Careers</a></li>
@@ -146,11 +146,11 @@ export default function Footer({ isDark }) {
           </div>
 
           {/* Column 4: Support */}
-          <div className="text-left space-y-2.5 col-span-1 md:col-span-2">
-            <h5 className={`font-bold text-xs uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>
+          <div className="text-left space-y-3 col-span-1 md:col-span-2">
+            <h5 className={`font-bold text-sm uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>
               Support
             </h5>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-sm sm:text-[15px]">
               <li><a href="#help" className="hover:text-purple-400 transition-colors">Help Center</a></li>
               <li><a href="#privacy" className="hover:text-purple-400 transition-colors">Privacy Policy</a></li>
               <li><a href="#terms" className="hover:text-purple-400 transition-colors">Terms of Service</a></li>
@@ -158,12 +158,12 @@ export default function Footer({ isDark }) {
             </ul>
           </div>
 
-          {/* Column 5: Stay Updated Newsletter (col-span-2 on mobile, col-span-2 on md) */}
-          <div className="col-span-2 md:col-span-2 text-left space-y-2.5">
-            <h5 className={`font-bold text-xs uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>
+          {/* Column 5: Stay Updated Newsletter */}
+          <div className="col-span-2 md:col-span-2 text-left space-y-3">
+            <h5 className={`font-bold text-sm uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>
               Stay updated
             </h5>
-            <p className="text-[11px] text-slate-400">
+            <p className="text-xs sm:text-sm text-slate-400">
               Get the latest news and features.
             </p>
             <form onSubmit={handleSubscribe} className="relative mt-2">
@@ -172,7 +172,7 @@ export default function Footer({ isDark }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className={`w-full pr-9 pl-3 py-2 text-xs rounded-xl border transition-colors focus:outline-none focus:border-purple-500 ${
+                className={`w-full pr-10 pl-3.5 py-2.5 text-sm rounded-xl border transition-colors focus:outline-none focus:border-purple-500 ${
                   isDark
                     ? 'bg-white/[0.05] border-white/10 text-white placeholder-slate-500'
                     : 'bg-slate-50 border-slate-200 text-slate-900 placeholder-slate-400'
@@ -180,26 +180,26 @@ export default function Footer({ isDark }) {
               />
               <button
                 type="submit"
-                className="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white flex items-center justify-center transition-transform hover:scale-105 cursor-pointer"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white flex items-center justify-center transition-transform hover:scale-105 cursor-pointer shadow-sm"
                 title="Subscribe"
               >
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             </form>
             {subscribed && (
-              <span className="text-[10px] text-emerald-400 block">✓ Subscribed successfully!</span>
+              <span className="text-xs text-emerald-400 block font-medium">✓ Subscribed successfully!</span>
             )}
           </div>
 
         </div>
 
         {/* Bottom Bar: Copyright & Language selector */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400">
           <p>© 2026 ConnectX. All rights reserved.</p>
           <div className="flex items-center gap-1.5 hover:text-white cursor-pointer px-2.5 py-1 rounded-md transition-colors">
-            <Globe className="w-3.5 h-3.5" />
+            <Globe className="w-4 h-4" />
             <span>English</span>
-            <ChevronDown className="w-3 h-3" />
+            <ChevronDown className="w-3.5 h-3.5" />
           </div>
         </div>
 

@@ -92,53 +92,61 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
       <div className="absolute top-1/4 -right-28 w-[550px] h-[550px] bg-fuchsia-600/15 blur-[150px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-14 items-center">
           
           {/* Left Column: Hero Text, CTAs, Stats & Social Proof */}
-          <div className="lg:col-span-5 text-left relative z-10">
+          <div className="lg:col-span-5 text-left relative z-10 max-w-full lg:max-w-[580px] xl:max-w-[640px]">
             {/* Top Eyebrow Tag */}
             <ScrollReveal direction="down" delay={0.1} duration={0.8}>
-              <div className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-[#D946EF] mb-5">
+              <div className="text-[13px] sm:text-sm font-extrabold tracking-[0.25em] uppercase text-[#D946EF] mb-4">
                 A MORE HUMAN WAY TO CONNECT
               </div>
             </ScrollReveal>
 
             {/* Main Headline */}
             <ScrollReveal direction="up" delay={0.2} duration={0.9}>
-              <h1 className="text-5xl sm:text-6xl xl:text-[68px] font-black tracking-tight leading-[1.05] mb-6 text-white">
-                Real<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#8B5CF6] to-[#EC4899]">
+              <h1 className={`text-4xl sm:text-5xl lg:text-[56px] xl:text-[68px] font-black tracking-tight leading-[1.08] mb-6 text-left ${
+                isDark ? 'text-white' : 'text-slate-900'
+              }`}>
+                <span className="block">Real</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#8B5CF6] to-[#EC4899] py-0.5">
                   Conversations
-                </span><br />
-                Without Limits.
+                </span>
+                <span className="block whitespace-nowrap">Without Limits.</span>
               </h1>
             </ScrollReveal>
 
             {/* Subtitle Description */}
             <ScrollReveal direction="up" delay={0.3} duration={0.9}>
-              <p className="text-base sm:text-lg leading-relaxed max-w-lg mb-8 font-normal text-slate-300">
+              <p className={`text-lg sm:text-xl lg:text-[21px] leading-relaxed max-w-[580px] mb-9 font-normal ${
+                isDark ? 'text-slate-200' : 'text-slate-600'
+              }`}>
                 Chat, call, and build meaningful relationships — without a phone number. Just your email, your unique username, and a world full of people to connect with.
               </p>
             </ScrollReveal>
 
             {/* CTA Buttons */}
             <ScrollReveal direction="up" delay={0.4} duration={0.9}>
-              <div className="flex flex-wrap items-center gap-4 mb-9">
+              <div className="flex flex-wrap items-center gap-4 mb-10">
                 <button
                   onClick={() => onNavigate ? onNavigate('signup') : null}
-                  className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#9333EA] text-white font-semibold text-sm shadow-[0_0_35px_rgba(99,102,241,0.6)] hover:shadow-[0_0_45px_rgba(147,51,234,0.85)] hover:scale-[1.02] active:scale-98 transition-all duration-300 cursor-pointer"
+                  className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#9333EA] text-white font-bold text-base shadow-[0_0_35px_rgba(99,102,241,0.6)] hover:shadow-[0_0_45px_rgba(147,51,234,0.85)] hover:scale-[1.02] active:scale-98 transition-all duration-300 cursor-pointer"
                 >
                   <span>Get Started Free</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <button
                   onClick={onOpenVideo}
-                  className="inline-flex items-center gap-3 px-6 py-4 rounded-full font-semibold text-sm bg-[#131624] hover:bg-[#1A1F33] text-white border border-white/10 backdrop-blur-md transition-all duration-300 group cursor-pointer shadow-sm"
+                  className={`inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-base backdrop-blur-md transition-all duration-300 group cursor-pointer shadow-sm ${
+                    isDark
+                      ? 'bg-[#131624] hover:bg-[#1A1F33] text-white border border-white/15'
+                      : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300'
+                  }`}
                 >
-                  <div className="w-6 h-6 rounded-full bg-[#6B21A8] flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-3 h-3 text-white fill-current ml-0.5" />
+                  <div className="w-7 h-7 rounded-full bg-[#6B21A8] flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-3.5 h-3.5 text-white fill-current ml-0.5" />
                   </div>
                   <span>Watch Video</span>
                 </button>
@@ -147,34 +155,46 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
 
             {/* Hero Live Stats Row */}
             <ScrollReveal direction="up" delay={0.45} duration={0.9}>
-              <div className="flex flex-wrap items-center gap-5 sm:gap-7 pt-1 mb-8 text-xs sm:text-sm">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-blue-500/15 border border-blue-500/20 text-blue-400 flex items-center justify-center">
-                    <Users className="w-4 h-4" />
+              <div className="flex flex-wrap items-center gap-6 sm:gap-9 pt-1 mb-9">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-2xl bg-blue-500/15 border border-blue-500/25 text-blue-400 flex items-center justify-center">
+                    <Users className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="font-extrabold text-white block text-sm sm:text-base leading-tight">100K+</span>
-                    <span className="text-[11px] text-slate-400">Active Users</span>
+                    <span className={`font-black block text-base sm:text-lg leading-tight ${
+                      isDark ? 'text-white' : 'text-slate-900'
+                    }`}>100K+</span>
+                    <span className={`text-xs sm:text-[13px] font-medium ${
+                      isDark ? 'text-slate-300' : 'text-slate-500'
+                    }`}>Active Users</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/20 text-purple-400 flex items-center justify-center">
-                    <Users className="w-4 h-4" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-2xl bg-purple-500/15 border border-purple-500/25 text-purple-400 flex items-center justify-center">
+                    <Users className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="font-extrabold text-white block text-sm sm:text-base leading-tight">50K+</span>
-                    <span className="text-[11px] text-slate-400">Groups Created</span>
+                    <span className={`font-black block text-base sm:text-lg leading-tight ${
+                      isDark ? 'text-white' : 'text-slate-900'
+                    }`}>50K+</span>
+                    <span className={`text-xs sm:text-[13px] font-medium ${
+                      isDark ? 'text-slate-300' : 'text-slate-500'
+                    }`}>Groups Created</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-indigo-500/15 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
-                    <Star className="w-4 h-4 fill-indigo-400/40 text-indigo-400" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-2xl bg-indigo-500/15 border border-indigo-500/25 text-indigo-400 flex items-center justify-center">
+                    <Star className="w-5 h-5 fill-indigo-400/40 text-indigo-400" />
                   </div>
                   <div>
-                    <span className="font-extrabold text-white block text-sm sm:text-base leading-tight">4.8/5</span>
-                    <span className="text-[11px] text-slate-400">User Rating</span>
+                    <span className={`font-black block text-base sm:text-lg leading-tight ${
+                      isDark ? 'text-white' : 'text-slate-900'
+                    }`}>4.8/5</span>
+                    <span className={`text-xs sm:text-[13px] font-medium ${
+                      isDark ? 'text-slate-300' : 'text-slate-500'
+                    }`}>User Rating</span>
                   </div>
                 </div>
               </div>
@@ -182,8 +202,8 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
 
             {/* Member Avatars Proof Row */}
             <ScrollReveal direction="up" delay={0.5} duration={0.9}>
-              <div className="flex items-center gap-3 pt-1">
-                <div className="flex -space-x-2 overflow-hidden">
+              <div className="flex items-center gap-4 pt-1">
+                <div className="flex -space-x-2.5 overflow-hidden">
                   {[
                     '/images/girl_1.jpg',
                     '/images/boy_1.jpg',
@@ -194,11 +214,15 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                       key={idx}
                       src={src}
                       alt="ConnectX User"
-                      className="inline-block h-8 w-8 sm:h-9 sm:w-9 rounded-full ring-2 ring-[#080A11] object-cover hover:scale-110 transition-transform"
+                      className={`inline-block h-9 w-9 sm:h-10 sm:w-10 rounded-full ring-2 object-cover hover:scale-110 transition-transform ${
+                        isDark ? 'ring-[#080A11]' : 'ring-white'
+                      }`}
                     />
                   ))}
                 </div>
-                <p className="text-xs sm:text-sm font-medium text-slate-300">
+                <p className={`text-sm sm:text-base font-medium ${
+                  isDark ? 'text-slate-200' : 'text-slate-700'
+                }`}>
                   People from around the world are connecting on ConnectX!
                 </p>
               </div>
@@ -209,7 +233,7 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
           <div className="lg:col-span-7 relative">
             
             {/* Top Right Handwritten Doodle Annotation */}
-            <div className="hidden md:flex flex-col items-end absolute -top-11 right-12 z-30 font-handwriting text-2xl sm:text-[28px] text-[#F472B6] pointer-events-none select-none text-right">
+            <div className="hidden md:flex flex-col items-end absolute -top-11 right-12 z-30 font-handwriting text-2xl sm:text-[28px] text-[#EC4899] pointer-events-none select-none text-right">
               <span className="rotate-2 font-bold tracking-wide">More than just messages</span>
               <svg className="w-10 h-10 text-[#00E5FF] mt-1 mr-4" viewBox="0 0 40 40" fill="none">
                 <path
@@ -238,11 +262,11 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
 
             {/* Main Mockup Showcase Wrapper */}
             <ScrollReveal direction="zoom" delay={0.3} duration={1.1} className="relative">
-              <div className="relative mx-auto max-w-[650px]">
+              <div className="relative mx-auto lg:ml-auto max-w-[760px] xl:max-w-[850px]">
                 
                 {/* 1. Tablet Mockup (Angled Dark Screen Chassis) */}
-                <div className="relative rounded-[28px] p-2.5 bg-gradient-to-b from-white/10 via-white/5 to-white/5 shadow-[0_25px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(139,92,246,0.2)] border border-slate-800/80 backdrop-blur-2xl mr-12 sm:mr-16">
-                  <div className="rounded-[20px] bg-[#0E131F] border border-slate-800/90 overflow-hidden shadow-2xl flex flex-col h-[480px]">
+                <div className="relative rounded-[28px] p-2.5 bg-gradient-to-b from-white/10 via-white/5 to-white/5 shadow-[0_25px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(139,92,246,0.2)] border border-slate-800/80 backdrop-blur-2xl mr-16 sm:mr-22 lg:mr-26 xl:mr-32">
+                  <div className="rounded-[20px] bg-[#0E131F] border border-slate-800/90 overflow-hidden shadow-2xl flex flex-col h-[525px] sm:h-[555px]">
                     
                     {/* Tablet Top Search & Titlebar */}
                     <div className="h-11 bg-[#090C15] border-b border-white/5 px-4 flex items-center justify-between text-xs">
@@ -256,13 +280,13 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                       </div>
 
                       {/* Search bar */}
-                      <div className="flex items-center gap-2 px-3 py-1.5 bg-[#141A28] rounded-full text-slate-400 text-[11px] w-48 sm:w-60 border border-white/5">
-                        <Search className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                        <span className="text-slate-400 truncate">Search people, groups...</span>
+                      <div className="flex items-center gap-2 px-3 py-1.5 bg-[#141A28] rounded-full text-slate-300 text-[11px] w-48 sm:w-60 border border-white/10">
+                        <Search className="w-3.5 h-3.5 text-slate-300 shrink-0" />
+                        <span className="text-slate-300 truncate">Search people, groups...</span>
                       </div>
 
                       {/* Top Action Icons */}
-                      <div className="flex items-center gap-2.5 text-slate-400">
+                      <div className="flex items-center gap-2.5 text-slate-300">
                         <button onClick={onOpenVideo} className="hover:text-purple-400 transition-colors p-1" title="Video Call">
                           <Video className="w-3.5 h-3.5" />
                         </button>
@@ -290,30 +314,30 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                               3
                             </span>
                           </button>
-                          <button className="p-2 text-slate-400 hover:text-white rounded-lg transition-colors">
+                          <button className="p-2 text-slate-300 hover:text-white rounded-lg transition-colors">
                             <User className="w-4 h-4" />
                           </button>
-                          <button className="p-2 text-slate-400 hover:text-white rounded-lg transition-colors">
+                          <button className="p-2 text-slate-300 hover:text-white rounded-lg transition-colors">
                             <Users className="w-4 h-4" />
                           </button>
-                          <button className="p-2 text-slate-400 hover:text-white rounded-lg transition-colors">
+                          <button className="p-2 text-slate-300 hover:text-white rounded-lg transition-colors">
                             <Phone className="w-4 h-4" />
                           </button>
-                          <button className="p-2 text-slate-400 hover:text-white rounded-lg transition-colors">
+                          <button className="p-2 text-slate-300 hover:text-white rounded-lg transition-colors">
                             <Bell className="w-4 h-4" />
                           </button>
-                          <button className="p-2 text-slate-400 hover:text-white rounded-lg transition-colors">
+                          <button className="p-2 text-slate-300 hover:text-white rounded-lg transition-colors">
                             <Bookmark className="w-4 h-4" />
                           </button>
                         </div>
-                        <button className="p-2 text-slate-400 hover:text-white rounded-lg transition-colors">
+                        <button className="p-2 text-slate-300 hover:text-white rounded-lg transition-colors">
                           <Settings className="w-4 h-4" />
                         </button>
                       </div>
 
                       {/* Chat List Column */}
-                      <div className="w-44 sm:w-48 bg-[#0C101C] border-r border-white/5 flex flex-col text-left overflow-y-auto no-scrollbar">
-                        <div className="p-2 text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 pt-2.5">
+                      <div className="w-40 sm:w-44 bg-[#0C101C] border-r border-white/5 flex flex-col text-left overflow-y-auto no-scrollbar shrink-0">
+                        <div className="p-2 text-[11px] font-bold text-slate-300 uppercase tracking-wider px-3 pt-2.5">
                           CHATS
                         </div>
 
@@ -337,21 +361,21 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                         </div>
 
                         {/* Travel Buddies */}
-                        <div className="p-2.5 hover:bg-white/[0.02] flex items-center gap-2 cursor-pointer opacity-85">
+                        <div className="p-2.5 hover:bg-white/[0.04] flex items-center gap-2 cursor-pointer transition-colors">
                           <div className="w-7 h-7 rounded-full bg-blue-600/30 text-blue-400 font-bold flex items-center justify-center text-[10px] shrink-0 ring-1 ring-blue-500/30">
                             TB
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-baseline">
-                              <span className="text-xs font-medium text-slate-200 truncate">Travel Buddies</span>
-                              <span className="text-[9px] text-slate-500">8:05 AM</span>
+                              <span className="text-xs font-semibold text-slate-100 truncate">Travel Buddies</span>
+                              <span className="text-[9px] text-slate-400 font-mono">8:05 AM</span>
                             </div>
-                            <p className="text-[10px] text-slate-400 truncate">Neha: Amazing view! 🏞️</p>
+                            <p className="text-[10px] text-slate-300 truncate">Neha: Amazing view! 🏞️</p>
                           </div>
                         </div>
 
                         {/* Alex */}
-                        <div className="p-2.5 hover:bg-white/[0.02] flex items-center gap-2 cursor-pointer opacity-85">
+                        <div className="p-2.5 hover:bg-white/[0.04] flex items-center gap-2 cursor-pointer transition-colors">
                           <img
                             src="/images/boy_1.jpg"
                             alt="Alex"
@@ -359,75 +383,75 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                           />
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-baseline">
-                              <span className="text-xs font-medium text-slate-200 truncate">Alex</span>
-                              <span className="text-[9px] text-slate-500">9:18 AM</span>
+                              <span className="text-xs font-semibold text-slate-100 truncate">Alex</span>
+                              <span className="text-[9px] text-slate-400 font-mono">9:18 AM</span>
                             </div>
-                            <p className="text-[10px] text-slate-400 truncate">Let's catch up later!</p>
+                            <p className="text-[10px] text-slate-300 truncate">Let's catch up later!</p>
                           </div>
                         </div>
 
                         {/* College Crew */}
-                        <div className="p-2.5 hover:bg-white/[0.02] flex items-center gap-2 cursor-pointer opacity-85">
+                        <div className="p-2.5 hover:bg-white/[0.04] flex items-center gap-2 cursor-pointer transition-colors">
                           <div className="w-7 h-7 rounded-full bg-indigo-600/30 text-indigo-400 font-bold flex items-center justify-center text-[10px] shrink-0 ring-1 ring-indigo-500/30">
                             CC
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-baseline">
-                              <span className="text-xs font-medium text-slate-200 truncate">College Crew</span>
-                              <span className="text-[9px] text-slate-500">10:10</span>
+                              <span className="text-xs font-semibold text-slate-100 truncate">College Crew</span>
+                              <span className="text-[9px] text-slate-400 font-mono">10:10</span>
                             </div>
-                            <p className="text-[10px] text-slate-400 truncate">Meeting tonight!</p>
+                            <p className="text-[10px] text-slate-300 truncate">Meeting tonight!</p>
                           </div>
                         </div>
 
                         {/* Movie Lovers */}
-                        <div className="p-2.5 hover:bg-white/[0.02] flex items-center gap-2 cursor-pointer opacity-85">
+                        <div className="p-2.5 hover:bg-white/[0.04] flex items-center gap-2 cursor-pointer transition-colors">
                           <div className="w-7 h-7 rounded-full bg-purple-600/30 text-purple-400 font-bold flex items-center justify-center text-[10px] shrink-0 ring-1 ring-purple-500/30">
                             🎬
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-baseline">
-                              <span className="text-xs font-medium text-slate-200 truncate">Movie Lovers</span>
-                              <span className="text-[9px] text-slate-500">Yesterday</span>
+                              <span className="text-xs font-semibold text-slate-100 truncate">Movie Lovers</span>
+                              <span className="text-[9px] text-slate-400 font-mono">Yesterday</span>
                             </div>
-                            <p className="text-[10px] text-slate-400 truncate">Rahul: New release!</p>
+                            <p className="text-[10px] text-slate-300 truncate">Rahul: New release!</p>
                           </div>
                         </div>
 
                         {/* Sneha */}
-                        <div className="p-2.5 hover:bg-white/[0.02] flex items-center gap-2 cursor-pointer opacity-85">
+                        <div className="p-2.5 hover:bg-white/[0.04] flex items-center gap-2 cursor-pointer transition-colors">
                           <img
                             src="/images/girl_1.jpg"
                             alt="Sneha"
                             className="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-purple-400/50"
                           />
                           <div className="flex-1 min-w-0">
-                            <span className="text-xs font-medium text-slate-200 truncate block">Sneha</span>
-                            <p className="text-[10px] text-slate-400 truncate">Photo sent</p>
+                            <span className="text-xs font-semibold text-slate-100 truncate block">Sneha</span>
+                            <p className="text-[10px] text-slate-300 truncate">Photo sent</p>
                           </div>
                         </div>
 
                         {/* Karan */}
-                        <div className="p-2.5 hover:bg-white/[0.02] flex items-center gap-2 cursor-pointer opacity-85">
+                        <div className="p-2.5 hover:bg-white/[0.04] flex items-center gap-2 cursor-pointer transition-colors">
                           <img
                             src="/images/boy_2.jpg"
                             alt="Karan"
                             className="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-cyan-400/50"
                           />
                           <div className="flex-1 min-w-0">
-                            <span className="text-xs font-medium text-slate-200 truncate block">Karan</span>
-                            <p className="text-[10px] text-slate-400 truncate">Photo 📷</p>
+                            <span className="text-xs font-semibold text-slate-100 truncate block">Karan</span>
+                            <p className="text-[10px] text-slate-300 truncate">Photo 📷</p>
                           </div>
                         </div>
 
                         {/* Design Hub */}
-                        <div className="p-2.5 hover:bg-white/[0.02] flex items-center gap-2 cursor-pointer opacity-85">
+                        <div className="p-2.5 hover:bg-white/[0.04] flex items-center gap-2 cursor-pointer transition-colors">
                           <div className="w-7 h-7 rounded-full bg-emerald-600/30 text-emerald-400 font-bold flex items-center justify-center text-[10px] shrink-0 ring-1 ring-emerald-500/30">
                             DH
                           </div>
                           <div className="flex-1 min-w-0">
-                            <span className="text-xs font-medium text-slate-200 truncate block">Design Hub</span>
-                            <p className="text-[10px] text-slate-400 truncate">You: Great work!</p>
+                            <span className="text-xs font-semibold text-slate-100 truncate block">Design Hub</span>
+                            <p className="text-[10px] text-slate-300 truncate">You: Great work!</p>
                           </div>
                         </div>
                       </div>
@@ -451,7 +475,7 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-2 text-slate-400">
+                          <div className="flex items-center gap-2 text-slate-300">
                             <button onClick={onOpenVideo} className="hover:text-purple-400 transition-colors">
                               <Phone className="w-3.5 h-3.5" />
                             </button>
@@ -465,7 +489,7 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                         </div>
 
                         {/* Chat Messages Body */}
-                        <div className="flex-1 p-3 overflow-y-auto space-y-2.5 text-left text-xs no-scrollbar">
+                        <div className="flex-1 p-3.5 sm:p-4 overflow-y-auto space-y-3 text-left text-xs no-scrollbar">
                           {messages.map((msg) => (
                             <div
                               key={msg.id}
@@ -473,57 +497,81 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
                             >
                               {msg.type === 'text' && (
                                 <div
-                                  className={`px-3 py-1.5 rounded-2xl max-w-[200px] leading-relaxed text-[11px] shadow-sm ${
+                                  className={`px-3.5 py-2 rounded-2xl max-w-[260px] sm:max-w-[310px] leading-relaxed text-xs sm:text-[13px] shadow-sm ${
                                     msg.sender === 'me'
                                       ? 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white rounded-br-xs'
                                       : 'bg-[#181D2E] text-slate-100 rounded-bl-xs border border-white/5'
                                   }`}
                                 >
                                   {msg.text}
-                                  <div className={`text-[8px] mt-0.5 text-right ${msg.sender === 'me' ? 'text-purple-200' : 'text-slate-400'}`}>
+                                  <div className={`text-[9px] mt-0.5 text-right ${msg.sender === 'me' ? 'text-purple-200' : 'text-slate-400'}`}>
                                     {msg.time}
                                   </div>
                                 </div>
                               )}
 
                               {msg.type === 'audio' && (
-                                <div className="flex items-center gap-2.5 px-3 py-2 bg-[#181D2E] text-slate-200 rounded-2xl rounded-bl-xs border border-white/5 max-w-[210px]">
+                                <div className="flex items-center gap-3 px-3.5 py-2.5 bg-[#181D2E] text-slate-200 rounded-2xl rounded-bl-xs border border-white/5 max-w-[260px] sm:max-w-[310px]">
                                   <button
                                     onClick={() => setIsPlayingAudio(!isPlayingAudio)}
-                                    className="w-6 h-6 rounded-full bg-[#7C3AED] hover:bg-[#8B5CF6] text-white flex items-center justify-center shrink-0 transition-colors"
+                                    className="w-7 h-7 rounded-full bg-[#7C3AED] hover:bg-[#8B5CF6] text-white flex items-center justify-center shrink-0 transition-colors shadow-sm"
                                   >
                                     {isPlayingAudio ? (
-                                      <Pause className="w-3 h-3 fill-current" />
+                                      <Pause className="w-3.5 h-3.5 fill-current" />
                                     ) : (
-                                      <Play className="w-3 h-3 fill-current ml-0.5" />
+                                      <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
                                     )}
                                   </button>
-                                  <div className="flex items-center gap-[2px] flex-1">
-                                    {[12, 18, 8, 22, 16, 26, 14, 20, 10, 24, 16, 8, 14, 18].map((h, idx) => (
+                                  <div className="flex items-center gap-[2.5px] flex-1">
+                                    {[12, 18, 8, 22, 16, 26, 14, 20, 10, 24, 16, 8, 14, 18, 10, 22, 14, 8].map((h, idx) => (
                                       <span
                                         key={idx}
                                         style={{ height: `${h}px` }}
                                         className={`w-[2px] rounded-full transition-all ${
-                                          isPlayingAudio ? 'bg-purple-400 animate-pulse' : 'bg-slate-500'
+                                          isPlayingAudio ? 'bg-purple-400 animate-pulse' : 'bg-slate-400'
                                         }`}
                                       />
                                     ))}
                                   </div>
-                                  <span className="text-[9px] text-slate-400 font-mono">{msg.duration}</span>
+                                  <span className="text-[10px] text-slate-300 font-mono shrink-0">{msg.duration}</span>
                                 </div>
                               )}
 
                               {msg.type === 'image' && (
-                                <div className="max-w-[195px] rounded-xl overflow-hidden bg-[#181D2E] border border-white/10 shadow-lg group">
-                                  <img
-                                    src={msg.image}
-                                    alt="Shared view"
-                                    className="w-full h-24 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    loading="lazy"
-                                  />
-                                  <div className="p-1.5 bg-[#121624] flex justify-between items-center text-[10px] text-slate-200">
-                                    <span>{msg.caption}</span>
-                                    <span className="text-[8px] text-slate-400">{msg.time}</span>
+                                <div className="w-full max-w-[310px] sm:max-w-[370px] rounded-2xl overflow-hidden bg-[#161B2B] border border-white/10 shadow-xl group transition-all duration-300 hover:border-purple-500/40">
+                                  <div className="relative overflow-hidden">
+                                    <img
+                                      src={msg.image}
+                                      alt="Shared view"
+                                      className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                      loading="lazy"
+                                    />
+                                    {/* Top and bottom subtle gradient overlay for contrast */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/35 pointer-events-none" />
+
+                                    {/* Location Pill Badge */}
+                                    <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-white shadow-md">
+                                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                      <span>Lake Louise, Banff</span>
+                                    </div>
+
+                                    {/* HD Badge */}
+                                    <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md border border-white/25 text-[9px] font-bold uppercase tracking-wider text-white shadow-sm">
+                                      HD
+                                    </div>
+                                  </div>
+
+                                  {/* Caption & Metadata Footer */}
+                                  <div className="px-3.5 py-2.5 bg-gradient-to-r from-[#121626] to-[#0E1220] flex items-center justify-between border-t border-white/5">
+                                    <span className="text-xs sm:text-[13px] font-medium text-white tracking-tight">
+                                      {msg.caption}
+                                    </span>
+                                    <div className="flex items-center gap-1.5 text-[10px] text-slate-400 font-mono shrink-0">
+                                      <span>{msg.time}</span>
+                                      <svg className="w-3.5 h-3.5 text-purple-400" viewBox="0 0 16 16" fill="currentColor">
+                                        <path d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.739a.75.75 0 0 1 1.04-.208Z" />
+                                      </svg>
+                                    </div>
                                   </div>
                                 </div>
                               )}
@@ -572,7 +620,7 @@ export default function Hero({ onOpenVideo, onNavigate, isDark }) {
 
                 {/* 2. Vertical Smartphone Mockup (Overlapping Front Right) */}
                 <div
-                  className="absolute -right-2 sm:-right-4 lg:-right-6 bottom-[-15px] sm:bottom-[-20px] w-[225px] sm:w-[255px] rounded-[36px] p-2 bg-[#0A0D14] shadow-[0_30px_70px_rgba(0,0,0,0.98),0_0_40px_rgba(168,85,247,0.35)] border-2 border-slate-700/80 backdrop-blur-2xl z-20 hover:scale-[1.02] transition-transform duration-300"
+                  className="absolute -right-2 sm:-right-4 lg:-right-6 bottom-[-15px] sm:bottom-[-20px] w-[215px] sm:w-[245px] rounded-[36px] p-2 bg-[#0A0D14] shadow-[0_30px_70px_rgba(0,0,0,0.98),0_0_40px_rgba(168,85,247,0.35)] border-2 border-slate-700/80 backdrop-blur-2xl z-20 hover:scale-[1.02] transition-transform duration-300"
                 >
                   <div className="rounded-[28px] overflow-hidden bg-black border border-white/10 flex flex-col relative aspect-[9/17.8]">
                     
